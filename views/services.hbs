@@ -1,0 +1,28 @@
+<h1> Services Offered for Children With Autism Spectrum Disorder
+
+</h1>
+
+
+{{#each services}}
+
+<a href="services/details/{{this._id}}">
+
+<h2>{{this.name}}</h2>
+
+</a>
+
+<form action = "/services/delete/{{this._id}}" method = "POST">
+<button>Delete this Service</button>
+</form>
+<br>
+<form action = "/services/edit/{{this._id}}" method = "GET">
+<button>Edit this Service</button>
+</form>
+
+
+
+{{/each}}
+
+<br></a>
+
+<a href = "/services/create-new-service">Click Here To Create New Service</a>

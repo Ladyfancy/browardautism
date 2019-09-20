@@ -1,0 +1,28 @@
+<h1>Broward County Autism Service Providers</h1>
+<p>Please note there are many providers not listed on this site. Please click on top to add your company or providers you recommend to this list.</p>
+<div class = >
+{{#each allTheProviders}}
+<div>
+<li>
+<h3> {{this.title}}</h3>
+<br>
+<img src="{{this.website}}" width='20%' />
+<br>
+<a href = "/providers/providerdetails/{{this.id}}">Click For Details</a>
+</li>
+<br>
+</div>
+</div>
+<form action = "/providers/delete/{{this._id}}" method = "POST">
+<button>Delete this Provider</button>
+</form>
+<br>
+<form action = "/providers/editproviders/{{this._id}}" method = "GET">
+<button>Edit this Provider</button>
+</form>
+{{/each}}
+
+<br>
+
+
+

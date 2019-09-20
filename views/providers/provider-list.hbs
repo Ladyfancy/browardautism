@@ -1,0 +1,27 @@
+{{#each providers}}
+
+<a href="/providers/providerdetails/{{this._id}}">
+
+
+<h2>
+{{this.title}}
+</h2>
+
+</a>
+
+
+
+<form action="/providers/delete/{{this._id}}" method="POST">
+    <button>Delete This Provider</button>
+</form>
+
+
+<a href="/providers/editproviders/{{this._id}}">Edit This Provider</a>
+
+
+
+
+
+
+
+{{/each}}

@@ -1,0 +1,28 @@
+
+{{#each services}}
+
+<a href="/services/details/{{this._id}}">
+
+
+<h2>
+{{this.name}}
+</h2>
+
+</a>
+
+
+
+<form action="/services/delete/{{this._id}}" method="POST">
+    <button>Delete This Service</button>
+</form>
+
+
+<a href="/services/editService/{{this._id}}">Edit This Service's Info</a>
+
+
+
+
+
+
+
+{{/each}}

@@ -1,0 +1,60 @@
+<h2>Edit Provider {{provider.title}}</h2>
+
+
+<form action="/providers/update/{{provider._id}}" method="POST">
+
+
+<p>Title</p>
+
+<input type="text" name="theTitle" value=" {{provider.title}}">
+
+
+{{!-- <p>The Director</p>
+
+
+<select director="theDirector">
+
+
+  {{#each directors}}
+
+  {{#if this.isTheChosenOne}}
+  <option selected value="{{this._id}}">{{this.director}}</option>
+  {{else}}
+     <option value="{{this._id}}">{{this.director}}</option>
+  {{/if}}
+
+  {{/each}}
+
+
+</select> --}}
+
+<p>Service</p>
+
+
+<select name="theService">
+
+
+  {{#each services}}
+
+  {{#if this.isTheChosenOne}}
+  <option selected value="{{this._id}}">{{this.Service}}</option>
+  {{else}}
+     <option value="{{this._id}}">{{this.Service}}</option>
+  {{/if}}
+
+  {{/each}}
+
+
+</select>
+
+
+<p>website</p>
+<input type="text" name="theWebsite"
+value="{{provider.website}}"
+>
+
+
+<button>Submit Changes 
+</button>
+
+</form>
