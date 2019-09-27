@@ -1,0 +1,22 @@
+<h2>Edit Provider {{provider.title}}</h2>
+
+<form action="/providers/update/{{provider._id}}" method="POST">
+
+
+<p>Event Name</p>
+<input type="text" name="theName," value=" {{event.name}}">
+
+<p>Event Date</p>
+<input type="text" name="theDate," value=" {{event.date}}"> 
+
+<p>Event Location</p>
+<input type="text" name="theLocation," value="{{event.location}}"
+>
+
+<p>Event Price</p>
+<select name="thePrice,">
+<input type="text" name="thePrice," value=" {{event.price}}" >
+
+<button>Submit Changes</button>
+
+</form>

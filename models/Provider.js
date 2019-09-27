@@ -2,7 +2,7 @@ const mongoose= require ('mongoose')
 const Schema = mongoose.Schema;
 
 const providerSchema = new Schema({
-    title : String,
+    name : String,
     director:String,
     service: {type: Schema.Types.ObjectID, ref: "Service"},
     website: String,

@@ -1,34 +1,16 @@
 <h2>Add A Provider</h2>
 
-<form action="/providers/creation" method="POST"></form>
+<form action="/providers/creation" method="POST">
 
+<div>
+    <p>Name</p>
+<input type = "text" name="theName">
 
-<p>Title</p>
-<input type ="text" name="theTitle">
+<p>Director</p>
+<input type= "text" name="theDirector">
 
-<p>Service</p>
-{{#each services}}
+<p>Website</p>
+<input type= "text" name="theWebsite">
+<div><button>Save</button></div>
 
-  {{#if this.isTheChosenOne}}
-  <option selected value="{{this._id}}">{{this.name}}</option>
-  {{else}}
-     <option value="{{this._id}}">{{this.name}}</option>
-  {{/if}}
-
-  {{/each}}
-
-
-</select>
-
-
-
-<p>website</p>
-<input type="text" name="thewebsite"
-value="{{provider.website}}"
->
-
-<button>Save</button>
-
-
-
-</form>x
+</form>

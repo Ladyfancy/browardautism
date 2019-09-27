@@ -1,22 +1,24 @@
 <h1>Welcome to Provider Details Page</h1>
 
 
-<p>Title:</p>
-<h2>{{theProvider.title}}</h2>
+<p>Name:</p>
+<h2>{{theProvider.name}}</h2>
 
 
 
 <p>Director:</p>
 
 {{!-- <a href="/providers/providerdetails/{{theProvider.director._id}}"> --}}
-<h3>{{theProvider.director.name}}</h3>
+<h3>{{theProvider.director}}</h3>
 </a>
-
+{{!-- 
 <p>Service:</p>
 
-{{!-- <a href="/providers/providerdetails/{{theProvider.Service._id}}"> --}}
-<h3>{{theProvider.Service.name}}</h3>
-</a>
+<a href="/providers/providerdetails/{{theProvider.Service._id}}">
+<h3>{{theProvider.director}}</h3>
+</a> --}}
 
 
-<img style="width:200px" src="{{theProvider.website}}" alt="sorry no website for this provider" >
+<p>Website</p>
+<h3>{{theProvider.website}}</h3>
+

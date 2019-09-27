@@ -1,15 +1,24 @@
 <h1>Broward County Autism Service Providers</h1>
-<p>Please note there are many providers not listed on this site. Please click on top to add your company or providers you recommend to this list.</p>
-<div class = >
+<p>Please note there are many providers not listed on this site.</p>
+<P>Please click on top to add your company or providers you recommend to this list.</P>
 {{#each allTheProviders}}
 <div>
-<li>
-<h3> {{this.title}}</h3>
-<br>
-<img src="{{this.website}}" width='20%' />
-<br>
+<p>Name:</p>
+<h2>{{theProvider.name}}</h2>
+
+
+
+<p>Director:</p>
+
+
+<h3>{{theProvider.director}}</h3>
+</a>
+
+
+<p>Website</p>
+<h3>{{theProvider.website}}</h3>
+
 <a href = "/providers/providerdetails/{{this.id}}">Click For Details</a>
-</li>
 <br>
 </div>
 </div>
@@ -24,5 +33,5 @@
 
 <br>
 
-
+<a href = "/providers/create-new-provider">Click Here To Create New Provider</a>
 

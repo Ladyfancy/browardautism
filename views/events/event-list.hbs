@@ -1,0 +1,27 @@
+{{#each allTheEvents}}
+
+<a href="/events/eventdetails/{{this._id}}">
+
+
+<h2>
+{{this.name}}
+</h2>
+
+</a>
+
+
+
+<form action="/events/delete/{{this._id}}" method="POST">
+    <button>Delete This Event</button>
+</form>
+
+
+<a href="/events/editevents/{{this._id}}">Edit This Event</a>
+
+
+
+
+
+
+
+{{/each}}

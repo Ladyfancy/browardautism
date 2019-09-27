@@ -8,9 +8,8 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
-const Service    = require('./models/Service')
+// const Service    = require('./models/Service')
 // const User         = require('./models/User');
-
 const session = require("express-session");
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
@@ -53,7 +52,7 @@ app.use(require('node-sass-middleware')({
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(favicon(path.join(__dirname, 'public', 'websites', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 app.use(session({
   secret: "secret",
@@ -125,13 +124,20 @@ const index = require('./routes/index');
 app.use('/', index);
 
 const services = require('./routes/services');
-app.use('/', services);
+app.use('/services', services);
 
-//          |
-app.use('/service', require('./routes/services'));
-app.use('/', require('./routes/providers'));
+const providers = require('./routes/providers');
+app.use('/providers', providers)
+
+const events = require('./routes/events');
+app.use('/events', events)
+
+const users = require('./routes/user-routes');
+app.use('/user', users)
+
+
+// app.use('/service', require('./routes/services'));
 // app.use('/auth', require('./routes/auth'));
-app.use('/user', require('./routes/user-routes'));
 // app.use('/admin', require('./routes/admin'));
 
 

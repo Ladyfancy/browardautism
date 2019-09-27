@@ -3,7 +3,7 @@ const router  = express.Router();
 const User = require('../models/User');
 const Service = require('../models/Service');
 const Provider = require('../models/Provider');
-
+const Event = require('../models/Event');
 
 router.get('/details/:searchFor/:theId', (req, res, next) => {
   if(!req.user){

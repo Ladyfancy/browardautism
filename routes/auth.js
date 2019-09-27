@@ -2,14 +2,8 @@ const express = require('express');
 const router  = express.Router();
 const bcrypt  = require('bcryptjs');
 const User    = require('../models/user');
-
 const passport = require('passport');
-
 const ensureLogin = require("connect-ensure-login");
-
-
-
-
 
 router.get('/signup', (req, res, next)=>{
     res.render('auth/signup');
@@ -28,7 +22,7 @@ router.post('/signup', (req, res, next)=>{
         password: hashedPassWord
     })
     .then(newlyCreatedUser=>{
-        console.log('yay');
+        console.log('Congrats');
         req.flash('success', `Congratulations ${newlyCreatedUser.username} on creating a new user!`);
         res.redirect('/');
     })

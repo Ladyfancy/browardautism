@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 const serviceSchema = new Schema({
  name: String,
- occupation: String,
- catchPhrase: String,
+ description: String,
  provider: {type: Schema.Types.ObjectID, ref: "Provider"},
 
  

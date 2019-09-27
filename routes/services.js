@@ -1,12 +1,12 @@
 const express = require('express');
 const router  = express.Router();
 
-const Service  = require('../models/service'); 
+const Service  = require('../models/Service'); 
 
 
 
 
-router.get('/services', (req, res, next)=>{
+router.get('/', (req, res, next)=>{
     Service.find()
     .then((allTheServices)=>{
         console.log(req.session.currentUser)
@@ -20,7 +20,7 @@ router.get('/services', (req, res, next)=>{
 
 })
 
-router.get('/services/details/:theid', (req, res, next)=>{
+router.get('/details/:theid', (req, res, next)=>{
     let id = req.params.theid
 
     Service.findById(id)
@@ -37,7 +37,7 @@ router.get('/services/details/:theid', (req, res, next)=>{
 
 
 
-router.get('/services/create-new-service', (req, res, next)=>{
+router.get('/create-new-service', (req, res, next)=>{
 
 
         
@@ -49,19 +49,19 @@ router.get('/services/create-new-service', (req, res, next)=>{
 
 
 
-router.post('/services/creation', (req, res, next)=>{
+router.post('/creation', (req, res, next)=>{
 
     console.log('=-=-=--=--=', req.body)
 
     let name = req.body.theName;
-    let occupation = req.body.theOccupation;
-    let catchphrase = req.body.theCatchphrase;
+    
+    let description = req.body.theDescription;
 
 
     Service.create({
         name: name,
-        occupation: occupation,
-        catchPhrase: catchphrase
+      
+        description: description
     })
     .then((result)=>{
 
@@ -75,7 +75,7 @@ router.post('/services/creation', (req, res, next)=>{
 })
 
 
-router.post('/services/delete/:id', (req, res, next)=>{
+router.post('/delete/:id', (req, res, next)=>{
     let id = req.params.id;
 
     Service.findByIdAndRemove(id)
@@ -87,7 +87,7 @@ router.post('/services/delete/:id', (req, res, next)=>{
     })
 })
 
-router.get('/services/edit/:id', (req, res, next)=>{
+router.get('/edit/:id', (req, res, next)=>{
     let id=req.params.id;
 
     Service.findById(id)
@@ -99,15 +99,15 @@ router.get('/services/edit/:id', (req, res, next)=>{
     })
 })
 
-router.post('/services/update/:id', (req, res, next)=>{
+router.post('/update/:id', (req, res, next)=>{
 
     let id=req.params.id;
 
     Service.findByIdAndUpdate(id, {
 
         name: req.body.theName,
-        occupation: req.body.theOccupation,
-        catchPhrase: req.body.theCatchphrase
+       
+        description: req.body.thedescription
 
     })
     .then((result)=>{

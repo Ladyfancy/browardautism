@@ -4,7 +4,7 @@ const router  = express.Router();
 const Provider  = require('../models/Provider'); 
 
 
-router.get('/providers', (req, res, next)=>{
+router.get('/', (req, res, next)=>{
     Provider.find()
     .then((allTheProviders)=>{
         console.log(allTheProviders)
@@ -18,11 +18,11 @@ router.get('/providers', (req, res, next)=>{
 
 })
 
-router.get('/providers/providerdetails/:theid', (req, res, next)=>{
+router.get('/providerdetails/:theid', (req, res, next)=>{
     let id = req.params.theid
 
     Provider.findById(id)
-    // .populate('provider')
+    
     .then((providerObject)=>{
 
         console.log(providerObject)
@@ -35,11 +35,8 @@ router.get('/providers/providerdetails/:theid', (req, res, next)=>{
     })
 })
 
-router.get('/providers/create-new-provider', (req, res, next)=>{
+router.get('/create-new-provider', (req, res, next)=>{
 
-    // we need a list of all the providers on this page so we do
-    // provider.find()
-    // .then((result)=>{
         
         res.render('providers/new-provider');
     // })
@@ -49,24 +46,24 @@ router.get('/providers/create-new-provider', (req, res, next)=>{
     
 })
 
-router.post('/providers/creation', (req, res, next)=>{
+router.post('/creation', (req, res, next)=>{
 
     console.log('=-=-=--=--=', req.body)
 
-    let title = req.body.theTitle;
+    let name = req.body.theName;
     let director = req.body.theDirector;
     let website = req.body.theWebsite;
 
 
     Provider.create({
-        title: title,
+        name: name,
         director: director,
         website: website
     })
     .then((result)=>{
+        console.log(result)
 
         res.redirect('/providers')
-        //its literally sending us to localhost:3000/providers
 
     })
     .catch((err)=>{
@@ -75,8 +72,10 @@ router.post('/providers/creation', (req, res, next)=>{
 })
 
 
-router.post('/providers/delete/:id', (req, res, next)=>{
+router.post('/delete/:id', (req, res, next)=>{
     let id = req.params.id;
+
+    console.log("We are deleting it")
 
     Provider.findByIdAndRemove(id)
     .then((result)=>{
@@ -87,7 +86,7 @@ router.post('/providers/delete/:id', (req, res, next)=>{
     })
 })
 
-router.get('/providers/editproviders/:id', (req, res, next)=>{
+router.get('/editproviders/:id', (req, res, next)=>{
     let id=req.params.id;
 
    Provider.findById(id)
@@ -99,7 +98,7 @@ router.get('/providers/editproviders/:id', (req, res, next)=>{
     })
 })
 
-router.post('/providers/update/:id', (req, res, next)=>{
+router.post('/update/:id', (req, res, next)=>{
 
     let id=req.params.id;
 
