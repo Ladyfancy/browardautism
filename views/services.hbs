@@ -1,6 +1,6 @@
-<h1> Services Offered for Children With Autism Spectrum Disorder
+<h4> Services Offered for ASD
 
-</h1>
+</h4>
 
 
 {{#each services}}
@@ -10,13 +10,13 @@
 <h2>{{this.name}}</h2>
 
 </a>
-
+<form action = "/services/edit/{{this._id}}" method = "GET">
+<button>Edit this Service</button>
 <form action = "/services/delete/{{this._id}}" method = "POST">
 <button>Delete this Service</button>
 </form>
 <br>
-<form action = "/services/edit/{{this._id}}" method = "GET">
-<button>Edit this Service</button>
+
 </form>
 
 

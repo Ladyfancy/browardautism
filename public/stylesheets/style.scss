@@ -36,7 +36,7 @@
   text-align: center; } */
 
   a {
-    color: blue; }
+    color: rgb(3, 174, 253); }
   
   /* .navbar {
     width: 100%;
@@ -79,7 +79,7 @@
     }
     
     .btn-success {
-        color: #fff;
+        color: white;
         background-color: #5cb85c;
         border-color: #4cae4c;
         padding: 15px;
@@ -88,7 +88,7 @@
     }
     
     .btn-delete {
-        color: #fff;
+        color: white;
         background-color: #CF000F;
         border-color: #CF000F;
         padding: 15px;
@@ -120,11 +120,12 @@
   
   #sliderbh button { background-color: rgba(0,0,0,6);
   color: white;
-  border: 1px solid #ffff;
+  border: 1px solid #white;
   padding: 7 px 17px;
   }
   
-  .carousel-control-next, .carousel-control-prev { width: 40px; height: 80px; top:50%; opacity: .0; background-color: #ed4b96}
+  .carousel-control-next, .carousel-control-prev 
+  { width: 40px; height: 80px; top:50%; opacity: .0; background-color:rgb(3, 174, 253)}
   
   #services {background-color: rgb(3, 174, 253); padding: 50px;
   text-align: center; color: white; 
@@ -137,7 +138,7 @@
   }
   .rounded-circle {
       padding: 15px;
-      border: 3px solid #fff;
+      border: 3px solid white;
       color: white;
   
   }
@@ -155,7 +156,7 @@
   } 
   
   .portfolio .row {padding-top: 15px;
-  border-top: 1px solid #bbb;
+  border-top: 1px solid white;
    }
   .portfolio p {line-height: 1rem;}
   
@@ -256,6 +257,6 @@
     transform: rotateY(180deg);
   }
   
-  .front img::hover {
+  .front img:hover {
       width: 1000px
   }

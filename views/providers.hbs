@@ -1,37 +1,37 @@
-<h1>Broward County Autism Service Providers</h1>
-<p>Please note there are many providers not listed on this site.</p>
-<P>Please click on top to add your company or providers you recommend to this list.</P>
+<h4>Service Providers</h4>
+
 {{#each allTheProviders}}
 <div>
 <p>Name:</p>
-<h2>{{theProvider.name}}</h2>
+<h2>{{this.name}}</h2>
 
 
 
 <p>Director:</p>
 
 
-<h3>{{theProvider.director}}</h3>
+<h3>{{this.director}}</h3>
 </a>
 
 
 <p>Website</p>
-<h3>{{theProvider.website}}</h3>
+<h3>{{this.website}}</h3>
 
-<a href = "/providers/providerdetails/{{this.id}}">Click For Details</a>
+{{!-- <a href = "/providers/providerdetails/{{this.id}}">Click For Details</a> --}}
 <br>
 </div>
 </div>
+<form action = "/providers/editproviders/{{this._id}}" method = "GET">
+<button>Edit this Provider</button>
 <form action = "/providers/delete/{{this._id}}" method = "POST">
 <button>Delete this Provider</button>
 </form>
 <br>
-<form action = "/providers/editproviders/{{this._id}}" method = "GET">
-<button>Edit this Provider</button>
+
 </form>
 {{/each}}
 
 <br>
 
-<a href = "/providers/create-new-provider">Click Here To Create New Provider</a>
+<a href = "/providers/create-new-provider">Create New Provider</a>
 

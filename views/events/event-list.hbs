@@ -1,27 +1,33 @@
+<h4> ASD Friendly and Caregiver Events
+
+</h4>
+
+
 {{#each allTheEvents}}
 
-<a href="/events/eventdetails/{{this._id}}">
+<a href="events/eventdetails/{{this._id}}">
 
+<h2>{{this.name}}</h2>
+<h2>{{this.date}}</h2>
+<h2>{{this.time}}</h2>
+<h2>{{this.location}}</h2>
+<h2>{{this.price}}</h2>
 
-<h2>
-{{this.name}}
-</h2>
 
 </a>
 
-
-
-<form action="/events/delete/{{this._id}}" method="POST">
-    <button>Delete This Event</button>
+<form action = "/events/delete/{{this._id}}" method = "POST">
+<button>Delete this Event</button>
 </form>
-
-
-<a href="/events/editevents/{{this._id}}">Edit This Event</a>
-
-
-
-
+<br>
+{{!-- <form action = "/events/editevents/{{this._id}}" method = "GET">
+<button>Edit this Event</button>
+</form> --}}
 
 
 
 {{/each}}
+
+<br></a>
+
+<a href = "/events/create-new-event">Click Here To Create New Event</a>
