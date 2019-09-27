@@ -7,6 +7,7 @@ const Service  = require('../models/Ha');
 
 
 router.get('/', (req, res, next)=>{
+    
     Service.find()
     .then((allTheServices)=>{
         console.log(req.session.currentUser)
