@@ -1,7 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 
-const Event  = require('../models/event'); 
+const Event  = require('Event'); 
 // const Provider  = require('../models/Provider'); 
 
 
