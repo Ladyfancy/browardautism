@@ -1,5 +1,5 @@
 const mongoose     = require('mongoose');
-const Service = require("../models/Service")
+const Service = require("../models/Ha")
 const Provider = require("../models/Provider")
 const Event = require("../models/Event")
 // const dbTitle = 'lab-cinema-generator'
