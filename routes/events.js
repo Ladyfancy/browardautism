@@ -58,7 +58,7 @@ router.post('/creation', (req, res, next)=>{
         price: price,
     })
     .then((result)=>{
-        res.redirect('/events')
+        res.redirect('/')
     })
     .catch((err)=>{
         next(err);

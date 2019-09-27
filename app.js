@@ -117,7 +117,7 @@ app.use((req, res, next) => {
   // (otherwise your browser will hang)
   next();
 });
-app.locals.title = 'Famous & Fabulous services';
+app.locals.title = 'Broward Autism';
 
 
 

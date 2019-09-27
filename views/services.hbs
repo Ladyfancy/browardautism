@@ -10,19 +10,23 @@
 <h2>{{this.name}}</h2>
 
 </a>
-<form action = "/services/edit/{{this._id}}" method = "GET">
-<button>Edit this Service</button>
-<form action = "/services/delete/{{this._id}}" method = "POST">
+<form action= "/services/edit/{{this._id}}" method = "POST">
+<button>Edit this Service</button> 
+</form>
+
+
+<form action= "/services/delete/{{this._id}}" method = "POST">
 <button>Delete this Service</button>
 </form>
+
 <br>
 
-</form>
+{{!-- </form> --}}
 
 
 
 {{/each}}
 
-<br></a>
+<br>
 
 <a href = "/services/create-new-service">Click Here To Create New Service</a>
